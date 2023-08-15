@@ -1,3 +1,7 @@
+.nutriment{
+    display: flex;
+    height: 100%;
+}
 .nutriment__content{
     display: flex;
     flex-direction: column;

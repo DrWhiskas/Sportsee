@@ -26,21 +26,25 @@ export default function Home(){
     return(
         <>
             <Header />
-            <Aside />
             <section className="dashboard">
-                <div className="dashboard__header">
-                    <Name />
-                </div>
-                <div className="dashboard__content">
-                <div className="dashboard__graphic">
-                    <Activity />
-                    <div className="dashboard__graphic__low">
-                        <Objectifs />
-                        <Radar />
-                        <Score />
-                    </div>  
-                </div>
-                    <Nutriment />
+                <Aside />
+                <div className="dashboard__c">
+                    <div className="dashboard__header">
+                        <Name />
+                    </div>
+                    <div className="dashboard__content">
+                    <div className="dashboard__graphic">
+                        <Activity />
+                        <div className="dashboard__graphic__low">
+                            <Objectifs />
+                            <Radar />
+                            <Score />
+                        </div>  
+                    </div>
+                        <div className="dashboard__content__nutriment">
+                            <Nutriment />
+                        </div>
+                    </div>
                 </div>
             </section>
             
