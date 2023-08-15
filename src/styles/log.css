@@ -1,0 +1,44 @@
+.log{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;    
+    background-color: #1f1e1e;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+.log__content{
+    width: 100%;
+}
+.log__content__title{
+    color: white;
+    text-align: center;
+}
+.log__content__user{
+    display: flex;
+    justify-content: center;
+    
+}
+.log__content__user__card{
+    display: flex;
+    height: 200px;
+    margin: 20px;
+    transition: all .2s ease-in-out;
+    background: linear-gradient(45deg, #b3b3b3, #8d8d8d);
+}
+a{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(124, 124, 124);
+    transition: all .2s ease-in-out;
+}
+
+.log__content__user__link:hover{
+    color: white;
+    font-weight: bold;
+}
+.log__content__user__link:hover .log__content__user__card{
+    border: solid 2px white;
+    transform: scale(1.05);
+}

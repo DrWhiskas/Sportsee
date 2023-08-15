@@ -1,0 +1,31 @@
+.aside{
+    background-color: black;
+    width: 117px;
+    height: 100vh;
+}
+.aside__content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+.aside__content__logo{
+    background-color: white;
+    width: 64px;
+    height: 64px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20%;
+}
+
+.aside__content__text{
+    transform: rotate(-90deg);
+    color: white;
+    width: 180px;
+    position: relative;
+    top: 18%;
+}

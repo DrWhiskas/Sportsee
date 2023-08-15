@@ -1,0 +1,66 @@
+.nutriment__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.nutriment__content__card__info__type,
+.nutriment__content__card__info__sub {
+    margin: 0;
+    padding: 0;
+}
+.nutriment__content__card{
+    background-color: #FBFBFB;
+    width: 258px;
+    height: 124px;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    margin-bottom: 2%;
+
+}
+.nutriment__content__card__icon{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nutriment__content__card__icon__content{
+    position: absolute;
+}
+.nutriment__content__card__info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+}
+.nutriment__content__card__info__type{
+    font-size: 20px;
+    line-height: 24px;
+}
+.nutriment__content__card__info__sub{
+    color: #74798C;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.calories,
+.proteines,
+.glucides,
+.lipides{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 10%;
+}
+.calories{
+    background-color: red;
+}
+.proteines{
+   background-color: #4AB8FF;
+}
+.glucides{
+    background-color: #F9CE23;
+}
+.lipides{
+   background-color: #FD5181;
+}

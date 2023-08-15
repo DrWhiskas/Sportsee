@@ -1,0 +1,12 @@
+.dashboard{
+    position: absolute;
+    top: 15%;
+    left: 15%;
+}
+.dashboard__graphic__low{
+    display: flex;
+    justify-content: space-between;
+}
+.dashboard__content{
+    display: flex;
+}
