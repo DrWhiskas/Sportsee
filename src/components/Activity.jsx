@@ -4,10 +4,13 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'rec
 import { USER_ACTIVITY } from '../app/data';
 import API from "../api/API";
 
+
 export default function Activity() {
 
+  // Récuperation de l'id de l'URL
   const { id } = useParams();
 
+  
   const prepareDataForChart = (userId) => {
     const userActivity = USER_ACTIVITY.find((user) => user.userId === parseInt(userId));
     if (!userActivity) return null;
