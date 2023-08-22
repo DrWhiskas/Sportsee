@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { USER_MAIN_DATA } from "../app/data";
+import Error404 from "../pages/Error404";
+import axios from "axios";
+import API from "../api/API"
 
 export default function Activity() {
   const { id } = useParams();
+
+  const [dataScore, setDataScore] = useState(0)
+
+  async function getData(){
+        const ApiRes = await API(id) 
+        setDataScore(ApiRes)
+    }
+     useEffect(() =>{
+        getData()
+    },[])
+
+    
 
   const prepareDataForGauge = (userId) => {
     const user = USER_MAIN_DATA.find((user) => user.id === parseInt(userId));
@@ -20,8 +35,12 @@ export default function Activity() {
 
     return data;
   };
+  
 
   const data = prepareDataForGauge(id);
+
+  console.log(dataScore,'oui');
+
 
   if (!data) return <div>No data available for this user.</div>;
 

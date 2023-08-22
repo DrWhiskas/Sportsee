@@ -12,10 +12,10 @@ import API from "../api/API"
 export default  function UserProfile() {
     
     const { id } = useParams();
-    const [dataProfile, setDataProfile] = useState(null) 
-
+    const [dataProfile, setDataProfile] = useState(0) 
+    
     async function getData(){
-        const ApiRes = await API() 
+        const ApiRes = await API(id) 
         setDataProfile(ApiRes)
     }
     useEffect(() =>{
@@ -23,15 +23,18 @@ export default  function UserProfile() {
     },[])
     const userData = USER_MAIN_DATA.find((user) => user.id === parseInt(id));
 
-    if(!userData){
-        return <Error404 />
+    let firstName
+    let APIuserName
+
+    if(userData){
+         firstName = userData.userInfos.firstName
     }
 
-    if(!dataProfile){
-        return <Error404 />
+    if(dataProfile){
+         APIuserName = dataProfile.userInfos.firstName
     }
-    const firstName = userData.userInfos.firstName
-    const APIuserName = dataProfile.userInfos.firstName
+   
+    
 
 console.log(id);
 

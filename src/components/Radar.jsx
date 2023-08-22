@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Tooltip, Legend } from 'recharts';
 import { USER_PERFORMANCE } from '../app/data';
+import Error404 from "../pages/Error404";
+import axios from "axios";
+import API from "../api/API"
 
 import '../styles/radar.css'
 
 
 export default function Activity() {
   const { id } = useParams();
+
+  const [dataOui , setDataOui] = useState(0)
+
+      async function getData(){
+        const ApiRes = await API(id) 
+        setDataOui(ApiRes)
+    }
+    useEffect(() =>{
+        getData()
+    },[])
+
 
   const prepareDataForChart = (userId) => {
     const userPerformance = USER_PERFORMANCE.find((user) => user.userId === parseInt(userId));
@@ -22,6 +36,7 @@ export default function Activity() {
   };
 
   const data = prepareDataForChart(id);
+
 
   if (!data) return <div>No data available for this user.</div>;
 

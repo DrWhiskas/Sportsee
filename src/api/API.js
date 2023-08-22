@@ -1,11 +1,12 @@
 import axios from "axios"
 // requete API
-export default async function API() {
-        let APIresponse // variable qui stocke la reponse de l'API  
+export default async function API(id) {
+      let APIresponse // variable qui stocke la reponse de l'API  
 
         try{
           // Essaie requete GET à l'URL 
-          APIresponse = await axios.get('http://localhost:3000/user/18');
+          console.log(id);
+          APIresponse = await axios.get(`http://localhost:3000/user/${id}`);
         }
 
 		catch(error){
@@ -13,7 +14,9 @@ export default async function API() {
 			console.error('Erreur', error);
 			throw error;
 		};
-		console.log(APIresponse.data.data);
+		//console.log(APIresPerf.data.data);
       // renvois de la reponse de l'API
-        return APIresponse.data.data;
+        return (
+					APIresponse.data.data
+				);
 }
