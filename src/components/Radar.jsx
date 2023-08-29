@@ -34,7 +34,6 @@ export default function Activity() {
     return chartData;
   };*/
 
-  const ApiMockMode = true
 
   function getDataChart(userId){
   }
