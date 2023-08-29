@@ -11,19 +11,18 @@ import '../styles/radar.css'
 
 export default function Activity() {
   const { id } = useParams();
-
-  const [dataOui , setDataOui] = useState(0)
+  const [dataRadar , setDataRadar] = useState([])
 
       async function getData(){
         const ApiRes = await API(id) 
-        setDataOui(ApiRes)
+        setDataRadar(ApiRes.performance)
     }
     useEffect(() =>{
         getData()
     },[])
 
 
-  const prepareDataForChart = (userId) => {
+  /*const prepareDataForChart = (userId) => {
     const userPerformance = USER_PERFORMANCE.find((user) => user.userId === parseInt(userId));
     if (!userPerformance) return null;
 
@@ -33,9 +32,16 @@ export default function Activity() {
     }));
 
     return chartData;
-  };
+  };*/
 
-  const data = prepareDataForChart(id);
+  const ApiMockMode = true
+
+  function getDataChart(userId){
+  }
+
+
+
+  const data = getDataChart(id);
 
 
   if (!data) return <div>No data available for this user.</div>;
@@ -45,7 +51,8 @@ export default function Activity() {
   const maxRadarValue = Math.max(...data.map((item) => item.value));
 
   return (
-     <div className="radar">
+     <section className="radar">
+      {dataRadar ? <div className="test">
       <RadarChart outerRadius={100} width={258} height={263} data={data}>
         <PolarGrid />
         <PolarAngleAxis dataKey="kind" />
@@ -54,6 +61,7 @@ export default function Activity() {
         <Tooltip />
         <Legend className="radar__legend" verticalAlign="top" align="right" />
       </RadarChart>
-    </div>
+      </div>:''}
+    </section>
   );
 }

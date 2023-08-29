@@ -39,7 +39,6 @@ export default function Activity() {
 
   const data = prepareDataForGauge(id);
 
-  console.log(dataScore,'oui');
 
 
   if (!data) return <div>No data available for this user.</div>;
