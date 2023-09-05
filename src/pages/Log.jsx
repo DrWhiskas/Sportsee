@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Profil from '../assets/profil.png'
 import '../styles/log.css'
+ 
 
 import { USER_MAIN_DATA } from '../app/data';
 

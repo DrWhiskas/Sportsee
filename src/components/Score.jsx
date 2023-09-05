@@ -17,13 +17,24 @@ export default function Activity() {
 	}, []);
 
 	function DataGauge() {
-		const gaugeValue = dataScore.todayScore * 100;
-		const emptyValue = 100 - gaugeValue;
-		const data = [
-			{ name: 'Gauge', value: gaugeValue },
-			{ name: 'Empty', value: emptyValue },
-		];
-		return data;
+		console.log(dataScore);
+		if (dataScore.todayScore) {
+			const gaugeValue = dataScore.todayScore * 100;
+			const emptyValue = 100 - gaugeValue;
+			const data = [
+				{ name: 'Gauge', value: gaugeValue },
+				{ name: 'Empty', value: emptyValue },
+			];
+			return data;
+		}else{
+			const gaugeValue = dataScore.score * 100;
+			const emptyValue = 100 - gaugeValue;
+			const data = [
+				{ name: 'Gauge', value: gaugeValue },
+				{ name: 'Empty', value: emptyValue },
+			];
+			return data;
+		}
 	}
 
 	const data = DataGauge();
