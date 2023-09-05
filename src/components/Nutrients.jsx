@@ -12,7 +12,6 @@ import '../styles/nutriment.css';
 export default function Nutriment() {
 	const { id } = useParams();
 	const [dataNutrient, setDataNutrients] = useState(0);
-	console.log(dataNutrient);
 
 	async function getData() {
 		const ApiRes = await API(id);

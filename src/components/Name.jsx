@@ -7,12 +7,11 @@ import API from "../api/API"
 export default  function UserProfile() {
     
     const { id } = useParams();
-    //const [dataProfile, setDataProfile] = useState(0) 
     const [firstName, setFirstName] = useState('')
 
     async function getData(){
         const ApiRes = await API(id) 
-        console.log(ApiRes);
+        //console.log(ApiRes);
         setFirstName(ApiRes.main.userInfos.firstName)
     }
 
@@ -22,7 +21,7 @@ export default  function UserProfile() {
 
     return (
         <div className="name">
-            Bonjour<span className="name__user">  {firstName}</span>
+            Bonjour <span className="name__user">{firstName}</span>
             <p className="name__text">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
     )

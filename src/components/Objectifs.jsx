@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, Label } from 'recharts';
 import { USER_AVERAGE_SESSIONS } from '../app/data';
+import axios from 'axios';
+import API from '../api/API';
 
 const daysOfWeek = ["L", "M", "M", "J", "V", "S", "D"];
 
 export default function Objectifs() {
   const { id } = useParams();
+  const [dataObjectif, setDataObjectif] = useState([])
 
-  const prepareDataForChart = (userId) => {
+  async function getData(){
+    const ApiRes = await API(id)
+    setDataObjectif(ApiRes.aver)
+  }
+
+  useEffect(() =>{
+    getData()
+  }, [])
+
+  console.log(dataObjectif, 'objectif');
+
+
+ /* const prepareDataForChart = (userId) => {
     const userAverageSessions = USER_AVERAGE_SESSIONS.find((user) => user.userId === parseInt(userId));
 
     const chartData = userAverageSessions.sessions.map((session, index) => ({
@@ -20,8 +35,10 @@ export default function Objectifs() {
   };
 
   const data = prepareDataForChart(id);
+*/
 
-  if (!data) return <div>No data available for this user.</div>;
+
+ // if (!data) return <div>No data available for this user.</div>;
 
   // valeur minimal et maximal
   const minSessionLength = Math.min(...data.map((item) => item.sessionLength));
