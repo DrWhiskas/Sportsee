@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
+import '../styles/name.css'
 import API from "../api/API"
 
 export default  function UserProfile() {
@@ -11,7 +11,6 @@ export default  function UserProfile() {
 
     async function getData(){
         const ApiRes = await API(id) 
-        //console.log(ApiRes);
         setFirstName(ApiRes.main.userInfos.firstName)
     }
 
@@ -21,7 +20,7 @@ export default  function UserProfile() {
 
     return (
         <div className="name">
-            Bonjour <span className="name__user">{firstName}</span>
+            <span className="name__salutation">Bonjour</span> <span className="name__user red"> {firstName}</span>
             <p className="name__text">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
     )

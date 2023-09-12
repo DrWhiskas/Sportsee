@@ -9,10 +9,9 @@ import {
 	Tooltip,
 	Legend,
 } from 'recharts';
-import { USER_ACTIVITY } from '../app/data';
 import API from '../api/API';
 import axios from 'axios';
-
+import '../styles/activity.css'
 
 export default function Activity() {
 	// Récuperation de l'id de l'URL
@@ -33,9 +32,9 @@ export default function Activity() {
 	const maxKilogram = Math.max(...dataActivity.sessions.map((session) => session.kilogram));
 
 	return (
-		<div>
-			<h2 style={{ marginLeft: 20, marginTop: 20 }}>Activité quotidienne</h2>
-			<BarChart width={835} height={320} data={dataActivity.sessions}>
+		<div className='activity'>
+			<p className='activity__title'>Activité quotidienne</p>
+			<BarChart width={800} height={227} data={dataActivity.sessions}>
 				<CartesianGrid strokeDasharray="3 3" />
 				<XAxis dataKey="day" />
 				<YAxis yAxisId="left" tick={false} />
@@ -52,7 +51,7 @@ export default function Activity() {
 					yAxisId="left"
 					dataKey="kilogram"
 					fill="#282D30"
-					barSize={20}
+					barSize={10}
 					name="Poids (kg)"
 					radius={[10, 10, 0, 0]}
 				/>
@@ -60,7 +59,7 @@ export default function Activity() {
 					yAxisId="right"
 					dataKey="calories"
 					fill="#E60000"
-					barSize={20}
+					barSize={10}
 					name="Calories brûlées (kCal)"
 					radius={[10, 10, 0, 0]}
 				/>

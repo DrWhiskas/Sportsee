@@ -1,0 +1,20 @@
+.name{
+    margin-top: 2%;
+    margin-left: 4%;
+}
+.name__salutation,
+.name__user
+{
+    font-weight:500 ;
+    font-size: 48px;
+    line-height: 24px;
+}
+
+.red{
+    color: #FF0101;
+}
+.name__text{
+    font-weight: 400px;
+    font-size: 18px;
+    line-height:24px ;
+}
