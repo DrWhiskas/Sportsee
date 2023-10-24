@@ -8,6 +8,7 @@ import {
 	Radar,
 	Tooltip,
 	Legend,
+	ResponsiveContainer,
 } from 'recharts';
 import axios from 'axios';
 import API from '../api/API';
@@ -26,33 +27,9 @@ export default function Activity() {
 	useEffect(() => {
 		getData();
 	}, []);
-	//console.log(dataRadar);
 
-	/*const prepareDataForChart = (userId) => {
-    const userPerformance = USER_PERFORMANCE.find((user) => user.userId === parseInt(userId));
-    if (!userPerformance) return null;
+	
 
-    const chartData = userPerformance.data.map((item) => ({
-      kind: userPerformance.kind[item.kind],
-      value: item.value,
-    }));
-
-    return chartData;
-  };*/
-
-	/*
-  function getDataChart(userId){
-
-  }
-
-  const data = getDataChart(id);
-
-  if (!data) return <div>No data available for this user.</div>;
-
-  const minRadarValue = Math.min(...data.map((item) => item.value));
-  const maxRadarValue = Math.max(...data.map((item) => item.value));
-*/
-	//console.log(dataRadar.data);
 	return (
 		<section className="radar">
 			{dataRadar ? (

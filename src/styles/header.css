@@ -1,6 +1,9 @@
 .header{
     background-color: black;
     height: 91px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
 }
 .header__content{
     display: flex;

@@ -1,7 +1,8 @@
 .aside{
     background-color: black;
     width: 117px;
-    height: 91vh;
+    height: 100vh;
+    position: absolute;
 }
 .aside__content{
     display: flex;
