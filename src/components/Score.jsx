@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
 import API from '../api/API';
+import '../styles/score.css'
 
 export default function Activity() {
 	const { id } = useParams();
@@ -36,6 +37,7 @@ export default function Activity() {
 			return data;
 		}
 	}
+		
 
 	const data = DataGauge();
 
@@ -45,44 +47,46 @@ export default function Activity() {
 
 	return (
 		<div className="score">
-			<ResponsiveContainer width={258} height={263}>
-				<PieChart>
-					<Pie
-						data={data}
-						dataKey="value"
-						startAngle={90}
-						endAngle={450}
-						innerRadius="70%"
-						outerRadius="80%"
-						fill="#8884d8"
-						paddingAngle={0}
-						isAnimationActive={false}
-						cornerRadius={10}
-					>
-						{data.map((entry, index) => (
-							<Cell key={`cell-${index}`} fill={COLORS[index]} />
-						))}
-					</Pie>
-					<text
-						className="score__text"
-						x="50%"
-						y="50%"
-						textAnchor="middle"
-						dominantBaseline="middle"
-						fontSize="20px"
-						fill="black"
-					>
-						<tspan x="50%" dy="-10">
-							{' '}
-							{data[0].value}%{' '}
-						</tspan>
-						<tspan x="50%" dy="20">
-							{' '}
-							de votre objectif{' '}
-						</tspan>
-					</text>
-				</PieChart>
-			</ResponsiveContainer>
+			<div className="score__content">
+				<ResponsiveContainer width="80%" height={263}>
+					<PieChart>
+						<Pie
+							data={data}
+							dataKey="value"
+							startAngle={90}
+							endAngle={450}
+							innerRadius="70%"
+							outerRadius="80%"
+							fill="#8884d8"
+							paddingAngle={0}
+							isAnimationActive={false}
+							cornerRadius={10}
+						>
+							{data.map((entry, index) => (
+								<Cell key={`cell-${index}`} fill={COLORS[index]} />
+							))}
+						</Pie>
+						<text
+							className="score__text"
+							x="50%"
+							y="50%"
+							textAnchor="middle"
+							dominantBaseline="middle"
+							fontSize="20px"
+							fill="black"
+						>
+							<tspan x="50%" dy="-10">
+								{' '}
+								{data[0].value}%{' '}
+							</tspan>
+							<tspan x="50%" dy="20">
+								{' '}
+								de votre objectif{' '}
+							</tspan>
+						</text>
+					</PieChart>
+				</ResponsiveContainer>
+			</div>
 		</div>
 	);
 }

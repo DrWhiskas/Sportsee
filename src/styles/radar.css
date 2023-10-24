@@ -1,5 +1,16 @@
 .radar {
   background-color: #282d30;
   border-radius: 6px;
-  
+  width: 50%; 
+}
+.radar__content{
+  width: 100%;
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .radar__content{
+  width: 200px;
+  margin: 0;
+}
 }

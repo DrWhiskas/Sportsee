@@ -12,14 +12,16 @@
 }
 .dashboard__graphic{
     width: 100%;
+    background-color: #FBFBFB;
+
 }
 .dashboard__graphic__low{
-       display: flex;
+    display: flex;
     justify-content: space-between;
-    gap: 1%;
-    height: 43.05%;
 }
 .dashboard__content{
     display: flex;
     justify-content: space-around;
+    gap: 3%;
+    padding: 3%;
 }

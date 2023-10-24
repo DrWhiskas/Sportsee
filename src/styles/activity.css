@@ -10,3 +10,15 @@
     margin-left: 7%;
 }
 
+.custom-tooltip__activity{
+    background-color: #E60000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 63px;
+    width: 39px;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    font-size: 7px;
+}

@@ -22,35 +22,29 @@ export default function Activity() {
 	async function getData() {
 		const ApiRes = await API(id);
 		setDataRadar(ApiRes.performance);
-		//console.log(dataRadar);
 	}
 	useEffect(() => {
 		getData();
 	}, []);
 
-	
-
 	return (
 		<section className="radar">
 			{dataRadar ? (
-				<div className="test">
-					<RadarChart
-						outerRadius={100}
-						width={258}
-						height={263}
-						data={dataRadar.data}
-					>
-						<PolarGrid />
-						<PolarAngleAxis dataKey="kind" />
+				<div className="radar__content">
+					<ResponsiveContainer width="99%" height={263}>
+						<RadarChart outerRadius={80} data={dataRadar.data}>
+							<PolarGrid />
+							<PolarAngleAxis dataKey="kind" />
 
-						<Radar dataKey="value" fill="#be0e0f" fillOpacity={0.6} />
-						<Tooltip />
-						<Legend
-							className="radar__legend"
-							verticalAlign="top"
-							align="right"
-						/>
-					</RadarChart>
+							<Radar dataKey="value" fill="#be0e0f" fillOpacity={0.6} />
+							<Tooltip />
+							<Legend
+								className="radar__legend"
+								verticalAlign="top"
+								align="right"
+							/>
+						</RadarChart>
+					</ResponsiveContainer>
 				</div>
 			) : (
 				''

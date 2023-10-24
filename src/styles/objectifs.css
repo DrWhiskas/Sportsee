@@ -1,0 +1,31 @@
+.objectifs{
+    width: 100%;
+    position: relative;
+}
+.objectifs__content{
+    width: 50%;
+    position: relative;
+}
+.chart-container{
+    margin-left: -20px;
+}
+.recharts-legend-icon {
+  display: none;
+}
+.custom-tooltip__objectif{
+    width: 25px;
+    height: 24px;
+    background-color: white;
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+}
+@media screen and (max-width: 1024px) {
+  .objectifs__content{
+  width: 200px;
+  height: 205px;
+  margin: 0;
+}
+}

@@ -1,0 +1,15 @@
+.score{
+    width: 50%;
+}
+.score__content{
+    width: 258px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .score__content{
+  width: 200px;
+  height: 205px;
+  margin: 0;
+}
+}

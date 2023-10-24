@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     place-items: center;
-    margin-bottom: 2%;
+    margin-bottom: 6%;
 
 }
 .nutriment__content__card__icon{
@@ -40,11 +40,13 @@
 .nutriment__content__card__info__type{
     font-size: 20px;
     line-height: 24px;
+    font-weight: bold;
 }
 .nutriment__content__card__info__sub{
     color: #74798C;
     font-size: 14px;
     line-height: 24px;
+    font-weight: 400;
 }
 
 .calories,
@@ -68,3 +70,11 @@
 .lipides{
    background-color: #FD5181;
 }
+
+
+@media screen and (max-width: 1024px) {
+ .nutriment__content__card{
+    width: 168px;
+}
+}
+

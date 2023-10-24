@@ -40,16 +40,27 @@ export default function Activity() {
 	//décompte des jours
 	const xAxisValues = dataActivity.sessions.map((session, index) => index + 1);
 
+	function CustomTooltipContent({ active, payload }) {
+		if (active && payload) {
+			const weight = payload[0].value;
+			const calories = payload[1].value;
+
+			return (
+				<div className="custom-tooltip__activity">
+					<p>{weight}kg</p>
+					<p>{calories}kcal</p>
+				</div>
+			);
+		}
+
+		return null;
+	}
 
 	return (
 		<div className="activity">
 			<p className="activity__title">Activité quotidienne</p>
-			<ResponsiveContainer  width="80%" height={227}>
-				<BarChart
-					className="activity__chart"
-			
-					data={dataActivity.sessions}
-				>
+			<ResponsiveContainer width="80%" height={227}>
+				<BarChart className="activity__chart" data={dataActivity.sessions}>
 					<CartesianGrid strokeDasharray="3 3" />
 					<XAxis
 						dataKey=""
@@ -64,7 +75,8 @@ export default function Activity() {
 						domain={[minKilogram, maxKilogram]}
 					/>
 
-					<Tooltip />
+					<Tooltip content={CustomTooltipContent} />
+
 					<Legend verticalAlign="top" align="right" iconType="circle" />
 					<Bar
 						yAxisId="left"
