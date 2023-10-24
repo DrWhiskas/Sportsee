@@ -1,5 +1,7 @@
 .activity{
     width: 100%;
+    background-color: #FBFBFB;
+    margin-bottom: 3%;
 }
 .activity__title{
     font-weight: 500;

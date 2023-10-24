@@ -1,9 +1,9 @@
 .objectifs{
-    width: 100%;
+    width: 50%;
     position: relative;
 }
 .objectifs__content{
-    width: 50%;
+    width: 100%;
     position: relative;
 }
 .chart-container{

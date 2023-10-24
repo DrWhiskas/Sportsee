@@ -59,8 +59,12 @@ export default function Activity() {
 	return (
 		<div className="activity">
 			<p className="activity__title">Activité quotidienne</p>
-			<ResponsiveContainer width="80%" height={227}>
-				<BarChart className="activity__chart" data={dataActivity.sessions}>
+			<ResponsiveContainer width="99%" height={227}>
+				<BarChart
+					className="activity__chart"
+					data={dataActivity.sessions}
+					style={{ marginLeft: '-65px' }}
+				>
 					<CartesianGrid strokeDasharray="3 3" />
 					<XAxis
 						dataKey=""

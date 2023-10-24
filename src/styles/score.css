@@ -2,7 +2,8 @@
     width: 50%;
 }
 .score__content{
-    width: 258px;
+    width: 100%;
+    text-align: -webkit-center;
 }
 
 
