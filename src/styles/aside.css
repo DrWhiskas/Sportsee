@@ -2,7 +2,7 @@
     background-color: black;
     width: 117px;
     height: 100vh;
-    position: absolute;
+    position: fixed;
 }
 .aside__content{
     display: flex;
@@ -28,9 +28,15 @@
     color: white;
     width: 180px;
     position: relative;
-    top: 17%;
+    top: 14%;
     font-size: 12px;
     font-weight: 500;
     line-height: 24px;
     
+}
+
+@media screen and (max-width: 1024px) {
+  .aside__content__text{
+    top: 10%;  
+    }
 }

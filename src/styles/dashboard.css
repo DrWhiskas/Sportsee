@@ -24,3 +24,8 @@
     gap: 3%;
     padding: 3%;
 }
+@media screen and (max-width: 1024px) {
+    .dashboard__c{
+        margin-top: 89px;
+    }
+}
