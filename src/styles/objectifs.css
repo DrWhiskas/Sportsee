@@ -1,5 +1,6 @@
 .objectifs{
-    width: 50%;
+    width: 20%;
+    min-width: 200px;
     position: relative;
 }
 .objectifs__content{

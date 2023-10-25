@@ -1,5 +1,7 @@
 .score{
-    width: 50%;
+    width: 30%;
+    min-width: 170px;
+    background-color: #FBFBFB;
 }
 .score__content{
     width: 100%;

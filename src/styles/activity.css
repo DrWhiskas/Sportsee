@@ -1,7 +1,8 @@
 .activity{
-    width: 100%;
+    width: 76%;
     background-color: #FBFBFB;
     margin-bottom: 3%;
+    min-width: 550px;;
 }
 .activity__title{
     font-weight: bold;
