@@ -20,7 +20,9 @@ export default function Activity() {
 	const [dataActivity, setDataActivity] = useState(0);
 
 	async function getData() {
+		// appel de l'api avec l'id
 		const ApiRes = await API(id);
+		// met à jour les donnée
 		setDataActivity(ApiRes.act);
 	}
 	useEffect(() => {
@@ -30,6 +32,7 @@ export default function Activity() {
 	if (!dataActivity.sessions)
 		return <div>No data available for this user.</div>;
 
+	// kilo max et minimum
 	const minKilogram = Math.min(
 		...dataActivity.sessions.map((session) => session.kilogram)
 	);

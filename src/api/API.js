@@ -33,7 +33,6 @@ export default async function API(id) {
 			console.error('Erreur', error);
 			throw error;
 		}
-		//console.log(APIresPerf.data.data);
 		// renvois de la ApiPerfRes.data.data de l'API
 		return {
 			main: APIresponse.data.data,
