@@ -68,7 +68,10 @@ export default function Objectifs() {
 				<ResponsiveContainer width="99%" height={263}>
 					<LineChart
 						data={dataObjectif}
-						style={{ background: '#FF0000' }}
+						style={{
+							background: 'linear-gradient(90deg, #FF0000 70%, #e60000 70%)',
+							borderRadius: '6px',
+						}}
 						margin={{
 							top: 0,
 							right: 0,
@@ -76,7 +79,12 @@ export default function Objectifs() {
 							bottom: 0,
 						}}
 					>
-						<XAxis dataKey="day" style={{ stroke: 'transparent' }}></XAxis>
+						<XAxis
+							dataKey="day"
+							style={{ stroke: 'transparent' }}
+							tick={{ fill: '#ff8484' }}
+							fontWeight="bold"
+						></XAxis>
 						<YAxis
 							yAxisId="left"
 							tick={false}
