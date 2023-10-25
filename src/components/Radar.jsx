@@ -38,11 +38,6 @@ export default function Activity() {
 
 							<Radar dataKey="value" fill="#be0e0f" fillOpacity={0.6} />
 							<Tooltip />
-							<Legend
-								className="radar__legend"
-								verticalAlign="top"
-								align="right"
-							/>
 						</RadarChart>
 					</ResponsiveContainer>
 				</div>

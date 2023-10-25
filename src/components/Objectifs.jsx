@@ -52,6 +52,16 @@ export default function Objectifs() {
 		return null
 	}
 
+	function renderCustomLegend(){
+		return (
+			<div className="custom-legend__objectif">
+				<p className="custom-legend__objectif__text">
+					Durée moyenne des sessions
+				</p>
+			</div>
+		);
+	}
+
 	return (
 		<div className="objectifs">
 			<div className="objectifs__content">
@@ -76,7 +86,8 @@ export default function Objectifs() {
 						<Legend
 							className="activity-chart-legend"
 							verticalAlign="top"
-							align="right"
+							align="left"
+							content={renderCustomLegend}
 						/>
 						<Line
 							yAxisId="left"
@@ -85,7 +96,6 @@ export default function Objectifs() {
 							stroke="#FFFFFF"
 							name="Durée moyenne des sessions"
 							iconType="none"
-							label={{ fill: 'rgba(255, 255, 255, opacity :0.1' }}
 						/>
 					</LineChart>
 				</ResponsiveContainer>

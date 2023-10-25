@@ -13,16 +13,32 @@
   display: none;
 }
 .custom-tooltip__objectif{
-    width: 25px;
-    height: 24px;
+    height: 56px;
+    width: 70px;
     background-color: white;
-    font-size: 8px;
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 3%;
 }
+.custom-legend__objectif{
+  margin-left: 22%;
+  width: 45%;
+}
+.custom-legend__objectif__text{
+  color: white;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 500;
+  opacity: 50.4%;
+  
+}
+
 @media screen and (max-width: 1024px) {
+  .objectifs{
+    height: 239px;
+  }
   .objectifs__content{
   width: 200px;
   height: 205px;

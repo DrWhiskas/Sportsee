@@ -18,7 +18,6 @@ export default function Activity() {
 	}, []);
 
 	function DataGauge() {
-		console.log(dataScore);
 		if (dataScore.todayScore) {
 			const gaugeValue = dataScore.todayScore * 100;
 			const emptyValue = 100 - gaugeValue;
