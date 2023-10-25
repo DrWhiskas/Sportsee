@@ -74,13 +74,24 @@ export default function Activity() {
 							fontSize="20px"
 							fill="black"
 						>
-							<tspan x="50%" dy="-10">
+							<tspan
+								x="50%"
+								dy="-25"
+								fontWeight="bold"
+								fontSize={26}
+								fill="#282D30"
+							>
 								{' '}
 								{data[0].value}%{' '}
 							</tspan>
-							<tspan x="50%" dy="20">
+							<tspan x="50%" dy="25" fontSize={16} fill="#74798C">
 								{' '}
-								de votre objectif{' '}
+								de votre
+							</tspan>
+							<tspan x="50%" dy="25" fontSize={16} fill="#74798C">
+								{''}
+								objectif
+								{''}
 							</tspan>
 						</text>
 					</PieChart>
