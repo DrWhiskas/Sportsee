@@ -8,7 +8,7 @@ import {
 
 // requete API
 export default async function API(id) {
-	const APIMock = true;
+	const APIMock = false;
 	if (APIMock === false) {
 		let APIresponse; // variable qui stocke la reponse de l'API
 		let ApiActivityRes;
