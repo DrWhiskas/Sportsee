@@ -31,7 +31,9 @@ export default function Objectifs() {
 		getData();
 	}, []);
 
-	if (!dataObjectif) return <div>No data available for this user.</div>;
+	if (!dataObjectif) {
+		return <div>Chargement...</div>;
+	}
 
 	// valeur minimal et maximal
 	const minSessionLength = Math.min(
@@ -104,6 +106,7 @@ export default function Objectifs() {
 							stroke="#FFFFFF"
 							name="Durée moyenne des sessions"
 							iconType="none"
+							dot={false}
 						/>
 					</LineChart>
 				</ResponsiveContainer>

@@ -3,46 +3,27 @@ import { useParams } from 'react-router-dom';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
 import API from '../api/API';
-import '../styles/score.css'
+import '../styles/score.css';
+import ModelScore from '../app/Models/ScoreModel';
 
 export default function Activity() {
 	const { id } = useParams();
-	const [dataScore, setDataScore] = useState([]);
+	const [dataScore, setDataScore] = useState(null);
 
 	async function getData() {
 		const ApiRes = await API(id);
-		setDataScore(ApiRes.main);
+		let modelScore = new ModelScore();
+		const scoreData = modelScore.modelData(ApiRes);
+		setDataScore(scoreData);
 	}
 	useEffect(() => {
 		getData();
 	}, []);
 
-	function DataGauge() {
-		if (dataScore.todayScore) {
-			const gaugeValue = dataScore.todayScore * 100;
-			const emptyValue = 100 - gaugeValue;
-			const data = [
-				{ name: 'Gauge', value: gaugeValue },
-				{ name: 'Empty', value: emptyValue },
-			];
-			return data;
-		}else{
-			const gaugeValue = dataScore.score * 100;
-			const emptyValue = 100 - gaugeValue;
-			const data = [
-				{ name: 'Gauge', value: gaugeValue },
-				{ name: 'Empty', value: emptyValue },
-			];
-			return data;
-		}
-	}
-		
-
-	const data = DataGauge();
-
-	if (!data) return <div>No data available for this user.</div>;
-
 	const COLORS = ['red', '#efefef'];
+	if (!dataScore) {
+		return <div>Chargement...</div>;
+	}
 
 	return (
 		<div className="score">
@@ -50,7 +31,7 @@ export default function Activity() {
 				<ResponsiveContainer width="80%" height={263}>
 					<PieChart>
 						<Pie
-							data={data}
+							data={dataScore}
 							dataKey="value"
 							startAngle={90}
 							endAngle={450}
@@ -61,7 +42,7 @@ export default function Activity() {
 							isAnimationActive={false}
 							cornerRadius={10}
 						>
-							{data.map((entry, index) => (
+							{dataScore.map((entry, index) => (
 								<Cell key={`cell-${index}`} fill={COLORS[index]} />
 							))}
 						</Pie>
@@ -82,7 +63,7 @@ export default function Activity() {
 								fill="#282D30"
 							>
 								{' '}
-								{data[0].value}%{' '}
+								{dataScore[0].value}%{' '}
 							</tspan>
 							<tspan x="50%" dy="25" fontSize={16} fill="#74798C">
 								{' '}

@@ -21,6 +21,10 @@ export default function Nutriment() {
 		getData();
 	}, []);
 
+	if (!dataNutrient) {
+		return <div>Chargemment...</div>;
+	}
+
 	return (
 		<section className="nutriment">
 			{dataNutrient ? (
