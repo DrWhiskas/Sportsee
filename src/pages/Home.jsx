@@ -20,7 +20,7 @@ export default function Home(){
     const userData = USER_MAIN_DATA.find((user) => user.id === parseInt(id));
 
     if(!userData){
-        return <Error404 />
+        return <div>Chargement...</div>
     }
 
 

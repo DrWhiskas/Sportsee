@@ -28,6 +28,7 @@ export default function Activity() {
 	return (
 		<div className="score">
 			<div className="score__content">
+				<h2 className="score__content__title">Score</h2>
 				<ResponsiveContainer width="80%" height={263}>
 					<PieChart>
 						<Pie

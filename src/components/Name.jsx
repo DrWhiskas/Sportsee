@@ -17,7 +17,9 @@ export default  function UserProfile() {
     useEffect(() =>{
         getData()
     },[])
-
+    if(!firstName){
+        return <div>Chargement...</div>
+    }
     return (
         <div className="name">
             <span className="name__salutation">Bonjour</span> <span className="name__user red"> {firstName}</span>

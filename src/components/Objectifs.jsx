@@ -31,9 +31,7 @@ export default function Objectifs() {
 		getData();
 	}, []);
 
-	if (!dataObjectif) {
-		return <div>Chargement...</div>;
-	}
+
 
 	// valeur minimal et maximal
 	const minSessionLength = Math.min(
@@ -63,7 +61,9 @@ export default function Objectifs() {
 			</div>
 		);
 	}
-
+	if (!dataObjectif) {
+		return <div>Chargement...</div>;
+	}
 	return (
 		<div className="objectifs">
 			<div className="objectifs__content">

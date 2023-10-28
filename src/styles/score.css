@@ -2,12 +2,19 @@
     width: 40%;
     min-width: 170px;
     background-color: #FBFBFB;
+    position: relative;
 }
 .score__content{
     width: 100%;
     text-align: -webkit-center;
 }
-
+.score__content__title{
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 24px;
+  position: absolute;
+  left: 21%;
+}
 
 @media screen and (max-width: 1024px) {
   .score__content{

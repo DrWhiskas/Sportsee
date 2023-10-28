@@ -6,6 +6,8 @@ import {
 	USER_PERFORMANCE,
 } from '../app/data';
 
+
+
 // requete API
 export default async function API(id) {
 	const APIMock = false;
@@ -30,15 +32,15 @@ export default async function API(id) {
 		} catch (error) {
 			// affichage de l'erreur
 			console.error('Erreur', error);
-			throw error;
+			window.location.href = '/error'
 		}
-		// renvois de la ApiPerfRes.data.data de l'API
-		return {
-			main: APIresponse.data.data,
-			act: ApiActivityRes.data.data,
-			aver: ApiAvergeRes.data.data,
-			performance: ApiPerfRes.data.data,
-		};
+			// renvois de la ApiPerfRes.data.data de l'API
+			return {
+				main: APIresponse.data.data,
+				act: ApiActivityRes.data.data,
+				aver: ApiAvergeRes.data.data,
+				performance: ApiPerfRes.data.data,
+			};
 	} else {
 		const userData = USER_MAIN_DATA.find((user) => user.id === parseInt(id));
 		const userActivity = USER_ACTIVITY.find(
