@@ -26,7 +26,7 @@ export default function Activity() {
 			const dataRadars = modelRadar.modelData(ApiRes);
 			setDataRadar(dataRadars);
 		}else{
-			return 0
+			return
 		}
 		
 	}
@@ -44,8 +44,7 @@ export default function Activity() {
 					<ResponsiveContainer width="99%" height={263}>
 						<RadarChart outerRadius={80} data={dataRadar}>
 							<PolarGrid radialLines={false} />
-							<PolarAngleAxis dataKey="kind" />
-
+							<PolarAngleAxis dataKey="kind" tick={{fill :'white', fontSize: '.7vw'}} />
 							<Radar dataKey="value" fill="#be0e0f" fillOpacity={0.6} />
 							<Tooltip />
 						</RadarChart>
