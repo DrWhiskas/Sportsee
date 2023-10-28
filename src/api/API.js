@@ -30,7 +30,7 @@ export default async function API(id) {
 		} catch (error) {
 			// affichage de l'erreur
 			console.error('Erreur', error);
-			window.location.href = '/error';
+			window.location.href = '/error500';
 			return 0
 		}
 		return {

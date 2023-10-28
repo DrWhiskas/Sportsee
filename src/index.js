@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Log from './pages/Log';
 import Error404 from './pages/Error404';
+import Error500 from './pages/Error500';
 import '../src/index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -15,6 +16,7 @@ root.render(
 				<Route path="/user/:id" element={<Home />} />
 				<Route path="/" element={<Log />} />
 				<Route path="*" element={<Error404 />} />
+				<Route path="/error500" element={<Error500 />} />
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>
