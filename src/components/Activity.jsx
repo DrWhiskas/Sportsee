@@ -23,10 +23,15 @@ export default function Activity() {
 	async function getData() {
 		// appel de l'api avec l'id
 		const ApiRes = await API(id);
-		let modelAct = new ActivityModel();
-		const dataAct = modelAct.moodelData(ApiRes);
-		// met à jour les donnée
-		setDataActivity(dataAct);
+		if(ApiRes){
+			let modelAct = new ActivityModel();
+			const dataAct = modelAct.moodelData(ApiRes);
+			// met à jour les donnée
+			setDataActivity(dataAct);
+		}else{
+			return 0
+		}
+		
 	}
 	useEffect(() => {
 		getData();

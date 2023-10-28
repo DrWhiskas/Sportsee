@@ -22,9 +22,14 @@ export default function Objectifs() {
 
 	async function getData() {
 		const ApiRes = await API(id);
-		let model = new Model();
-		const data = model.modelData(ApiRes);
-		setDataObjectif(data);
+		if(ApiRes){
+			let model = new Model();
+			const data = model.modelData(ApiRes);
+			setDataObjectif(data);
+		}else{
+			return 0
+		}
+		
 	}
 
 	useEffect(() => {

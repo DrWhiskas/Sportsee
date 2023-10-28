@@ -21,9 +21,14 @@ export default function Activity() {
 
 	async function getData() {
 		const ApiRes = await API(id);
-		let modelRadar = new ModelRadar()
-		const dataRadars = modelRadar.modelData(ApiRes)
-		setDataRadar(dataRadars);
+		if(ApiRes){
+			let modelRadar = new ModelRadar();
+			const dataRadars = modelRadar.modelData(ApiRes);
+			setDataRadar(dataRadars);
+		}else{
+			return 0
+		}
+		
 	}
 	useEffect(() => {
 		getData();

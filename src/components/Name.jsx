@@ -10,8 +10,13 @@ export default  function UserProfile() {
     const [firstName, setFirstName] = useState('')
 
     async function getData(){
-        const ApiRes = await API(id) 
-        setFirstName(ApiRes.main.userInfos.firstName)
+        const ApiRes = await API(id)
+        if(ApiRes){
+            setFirstName(ApiRes.main.userInfos.firstName);
+        }else{
+            return 0
+        } 
+        
     }
 
     useEffect(() =>{

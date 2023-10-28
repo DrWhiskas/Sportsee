@@ -15,7 +15,12 @@ export default function Nutriment() {
 
 	async function getData() {
 		const ApiRes = await API(id);
-		setDataNutrients(ApiRes);
+		if(ApiRes){
+			setDataNutrients(ApiRes);
+		}else{
+			return 0
+		}
+		
 	}
 	useEffect(() => {
 		getData();

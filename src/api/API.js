@@ -31,12 +31,7 @@ export default async function API(id) {
 			// affichage de l'erreur
 			console.error('Erreur', error);
 			window.location.href = '/error';
-			return{
-				main: 0,
-				act: 0, 
-				aver: 0,
-				performance: 0,
-			}
+			return 0
 		}
 		return {
 			main: APIresponse.data.data,

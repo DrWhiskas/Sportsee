@@ -12,9 +12,14 @@ export default function Activity() {
 
 	async function getData() {
 		const ApiRes = await API(id);
-		let modelScore = new ModelScore();
-		const scoreData = modelScore.modelData(ApiRes);
-		setDataScore(scoreData);
+		if(ApiRes){
+			let modelScore = new ModelScore();
+			const scoreData = modelScore.modelData(ApiRes);
+			setDataScore(scoreData);
+		}else{
+			return 0
+		}
+		
 	}
 	useEffect(() => {
 		getData();
