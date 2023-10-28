@@ -42,7 +42,7 @@ export default function Activity() {
 			{dataRadar ? (
 				<div className="radar__content">
 					<ResponsiveContainer width="99%" height={263}>
-						<RadarChart outerRadius={85} data={dataRadar}>
+						<RadarChart outerRadius={80} data={dataRadar}>
 							<PolarGrid radialLines={false} />
 							<PolarAngleAxis dataKey="kind" tick={{fill :'white', fontSize: '.7vw'}} />
 							<Radar dataKey="value" fill="#be0e0f" fillOpacity={0.6} />
