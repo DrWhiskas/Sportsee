@@ -65,17 +65,17 @@ export default function Activity() {
 								x="50%"
 								dy="-25"
 								fontWeight="bold"
-								fontSize={26}
+								fontSize='1.8vw'
 								fill="#282D30"
 							>
 								{' '}
 								{dataScore[0].value}%{' '}
 							</tspan>
-							<tspan x="50%" dy="25" fontSize={16} fill="#74798C">
+							<tspan x="50%" dy="25" fontSize='1vw' fill="#74798C">
 								{' '}
 								de votre
 							</tspan>
-							<tspan x="50%" dy="25" fontSize={16} fill="#74798C">
+							<tspan x="50%" dy="25" fontSize='1vw' fill="#74798C">
 								{''}
 								objectif
 								{''}
