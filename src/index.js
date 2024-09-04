@@ -14,6 +14,7 @@ root.render(
 		<BrowserRouter>
 			<Routes>
 				<Route path="/user/:id" element={<Home />} />
+				<Route path="/Sportsee" element={<Log />} />
 				<Route path="/" element={<Log />} />
 				<Route path="*" element={<Error404 />} />
 				<Route path="/error500" element={<Error500 />} />
