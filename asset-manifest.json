@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Sportsee/static/css/main.7fd55c77.css",
-    "main.js": "/Sportsee/static/js/main.25b1fb23.js",
-    "static/js/787.a8762e9d.chunk.js": "/Sportsee/static/js/787.a8762e9d.chunk.js",
-    "static/media/Logo.png": "/Sportsee/static/media/Logo.a82ff4c6575f883c33b7.png",
-    "index.html": "/Sportsee/index.html",
-    "main.7fd55c77.css.map": "/Sportsee/static/css/main.7fd55c77.css.map",
-    "main.25b1fb23.js.map": "/Sportsee/static/js/main.25b1fb23.js.map",
-    "787.a8762e9d.chunk.js.map": "/Sportsee/static/js/787.a8762e9d.chunk.js.map"
+    "main.css": "/sportsee/static/css/main.7fd55c77.css",
+    "main.js": "/sportsee/static/js/main.dd309b49.js",
+    "static/js/787.a8762e9d.chunk.js": "/sportsee/static/js/787.a8762e9d.chunk.js",
+    "static/media/Logo.png": "/sportsee/static/media/Logo.a82ff4c6575f883c33b7.png",
+    "index.html": "/sportsee/index.html",
+    "main.7fd55c77.css.map": "/sportsee/static/css/main.7fd55c77.css.map",
+    "main.dd309b49.js.map": "/sportsee/static/js/main.dd309b49.js.map",
+    "787.a8762e9d.chunk.js.map": "/sportsee/static/js/787.a8762e9d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7fd55c77.css",
-    "static/js/main.25b1fb23.js"
+    "static/js/main.dd309b49.js"
   ]
 }
